@@ -1,0 +1,45 @@
+\documentclass{article}
+\input{TexBase/DocumentBase.tex}
+
+\section{Wstęp}
+
+\section{Zadanie pierwsze}
+    \subsection{Cel ćwiczenia}
+    Zadanie pierwsze polegało na zastosowaniu filtru górnoprzepustowego (tzw. detektora krawędzi) do obrazu. 
+    W tym celu mieliśmy wykorzystać maskę:
+    \[
+        \begin{bmatrix}
+            -1 & -1 & -1 \\
+            -1 & 8 & -1 \\
+            -1 & -1 & -1
+        \end{bmatrix}
+    \]
+
+    \subsection{Teoria}
+    Filtry obrazów są kluczowym narzędziem w dziedzinie przetwarzania obrazów, 
+    służącym do modyfikacji wyglądu i charakterystyk obrazu poprzez różnorodne operacje matematyczne 
+    na pikselach. Wśród podstawowych rodzajów filtrów wyróżnia się filtry górnoprzepustowe i dolnoprzepustowe.
+
+    Filtry górnoprzepustowe, takie jak implementowany w zadaniu filtr Laplace'a, mają za zadanie podkreślać detale i krawędzie
+    poprzez eliminację niskoczęstotliwościowych składowych obrazu i przepuszczanie wysokoczęstotliwościowych. 
+    Działają na zasadzie mnożenia wartości pikseli przez odpowiednie współczynniki z maski, 
+    co prowadzi do wyostrzenia obrazu i podkreślenia struktur.
+    
+    Z kolei filtry dolnoprzepustowe, np. filtr Gaussa, przepuszczają składowe niskoczęstotliwościowe, 
+    eliminując wysokoczęstotliwościowe. Ich działanie polega na wygładzaniu obrazu poprzez średnią lub 
+    ważoną wartość pikseli w otoczeniu. W efekcie uzyskuje się efekt rozmycia, który może być wykorzystywany 
+    m.in. do redukcji szumów.
+
+    Źródło: [\cite{Lubiński2007}]
+
+
+\section{Zadanie drugie}
+\section{Zadanie trzecie}
+
+
+
+
+\bibliographystyle{plainnat}
+\bibliography{Bibliography}
+
+\end{document}

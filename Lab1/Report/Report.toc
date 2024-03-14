@@ -1,0 +1,9 @@
+\babel@toc {polish}{}\relax 
+\contentsline {section}{\numberline {1}Wstęp}{2}{section.1}%
+\contentsline {section}{\numberline {2}Zadanie pierwsze}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Cel ćwiczenia}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Teoria}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Wizualizację wybranych filtrów}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Eksperymenty z modyfikacją maski}{3}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Zadanie drugie}{3}{section.3}%
+\contentsline {section}{\numberline {4}Zadanie trzecie}{3}{section.4}%
