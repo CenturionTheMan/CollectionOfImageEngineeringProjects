@@ -1,0 +1,257 @@
+\documentclass{article}
+\input{TexBase/DocumentBase.tex}
+
+
+\section{Zadanie pierwsze}
+    \subsection{Cel ćwiczenia}
+    Zadanie pierwsze polegało na zastosowaniu filtru górnoprzepustowego (tzw. detektora krawędzi) do obrazu. 
+    W tym celu mieliśmy wykorzystać maskę:
+    \[
+        \begin{bmatrix}
+            -1 & -1 & -1 \\
+            -1 & 8 & -1 \\
+            -1 & -1 & -1
+        \end{bmatrix}
+    \]
+
+    \subsection{Teoria}
+    Filtry obrazów są kluczowym narzędziem w dziedzinie przetwarzania obrazów, 
+    służącym do modyfikacji wyglądu i charakterystyk obrazu poprzez różnorodne operacje matematyczne 
+    na pikselach. Wśród podstawowych rodzajów filtrów wyróżnia się filtry górnoprzepustowe i dolnoprzepustowe.
+
+    Filtry górnoprzepustowe, takie jak implementowany w zadaniu filtr Laplace'a, mają za zadanie podkreślać detale i krawędzie
+    poprzez eliminację niskoczęstotliwościowych składowych obrazu i przepuszczanie wysokoczęstotliwościowych. 
+    Działają na zasadzie mnożenia wartości pikseli przez odpowiednie współczynniki z maski, 
+    co prowadzi do wyostrzenia obrazu i podkreślenia struktur. 
+    
+    Przykładowe filtry górnoprzepustowe to
+    \begin{itemize}
+        \item Filtr Laplace'a
+        \item Filtr usuń średnią (ang. mean removal)
+        \item Filtr HP1, HP2, HP3
+    \end{itemize}
+
+    
+    Z kolei filtry dolnoprzepustowe, np. filtr Gaussa, przepuszczają składowe niskoczęstotliwościowe, 
+    eliminując wysokoczęstotliwościowe. Ich działanie polega na wygładzaniu obrazu poprzez średnią lub 
+    ważoną wartość pikseli w otoczeniu. W efekcie uzyskuje się efekt rozmycia, który może być wykorzystywany 
+    m.in. do redukcji szumów.
+
+    Przykładowe filtry dolnoprzepustowe to
+    \begin{itemize}
+        \item Filtr uśredniający
+        \item Filtr kołowy
+        \item Filtr piramidalny
+    \end{itemize}
+        
+    Źródło: \cite{Lubinski2007}
+
+    \subsection{Prezentacja wykonanego zadania}
+    \begin{figure}[H]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad1.png}%
+        }
+        \caption{Zdjęcie oryginalne i po nałożeniu filtru górnoprzepustowego podanego w zadaniu}
+    \end{figure}
+
+    \subsection{Wizualizację wybranych filtrów}
+
+
+    \subsection{Eksperymenty z modyfikacją maski}
+
+    \begin{enumerate}
+        \item Obraz dla maski $\begin{bmatrix}
+                                    1 & 1 & 1 \\
+                                    1 & 8 & 1 \\
+                                    1 & 1 & 1
+                                \end{bmatrix}$
+        \item Obraz dla maski $\begin{bmatrix}
+                                    0 & 1/21 & 1/21 & 1/21 & 0 \\
+                                    1/21 & 1/21 & 1/21 & 1/21 & 1/21 \\
+                                    1/21 & 1/21 & 1/21 & 1/21 & 1/21 \\
+                                    1/21 & 1/21 & 1/21 & 1/21 & 1/21 \\
+                                    0 & 1/21 & 1/21 & 1/21 & 0
+                                \end{bmatrix}$
+    \end{enumerate}
+
+    \begin{figure}[H]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad1_1.png}%
+        }
+        \caption{Otrzymane zdjęcie po nałożeniu maski numer 1}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad1_2.png}%
+        }
+        \caption{Otrzymane zdjęcie po nałożeniu maski numer 2}
+    \end{figure}
+
+
+\section{Zadanie drugie}
+    \subsection{Cel ćwiczenia}
+    Zadanie drugie polegało na przekształceniu koloru obrazu.
+    Dla każdego piksela należało zastosować przekształcenie kanałów wzorem:
+
+    \[
+        \begin{bmatrix}
+            R_{new} \\
+            G_{new} \\
+            B_{new}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0.393 & 0.769 & 0.189 \\
+            0.349 & 0.686 & 0.168 \\
+            0.272 & 0.534 & 0.131
+        \end{bmatrix}
+        *
+        \begin{bmatrix}
+            R \\
+            G \\
+            B
+        \end{bmatrix}
+    \]
+
+    Przedstawiona macierz nakłada efekt sepii na obraz.
+
+    \subsection{Prezentacja wykonanego zadania}
+    \begin{figure}[H]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad2.png}%
+        }
+        \caption{Zdjęcie oryginalne i po nałożeniu efektu sepii}
+    \end{figure}
+
+    \subsection{Eksperymenty z innymi macierzami przekształceń}
+
+    \begin{enumerate}
+        \item Przekształcenie kolorów macierzą: $\begin{bmatrix}
+                                                    1 & 1 & 1 \\
+                                                    1 & 1 & 1 \\
+                                                    0 & 0 & 0
+                                                \end{bmatrix}$
+        \item Przekształcenie kolorów macierzą: $\begin{bmatrix}
+                                                    1 & 1 & 1 \\
+                                                    0 & 0 & 0 \\
+                                                    1 & 1 & 1
+                                                \end{bmatrix}$
+    \end{enumerate}
+
+    \begin{figure}[H]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad2_1.png}%
+        }
+        \caption{Otrzymane zdjęcie po nałożeniu przekształcenia numer 1}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad2_2.png}%
+        }
+        \caption{Otrzymane zdjęcie po nałożeniu przekształcenia numer 2}
+    \end{figure}
+
+
+\section{Zadanie trzecie}
+    \section{Cel ćwiczenia}
+    Zadanie trzecie polegało na skonwertowaniu obrazu z modelu RGB do modelu YCbCr i
+    wyświetleniu poszczególnych kanałów Y, Cb, Cr w odcieniach szarości. Następnie należało
+    przeprowadzić konwersję odwrotną i wyświetlić obraz wynikowy.
+
+    Konwersję mieliśmy wykonać za pomocą wzoru:
+    \[
+        \begin{bmatrix}
+            Y \\
+            Cr \\
+            Cb
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            0 \\
+            128 \\
+            128
+        \end{bmatrix}
+        +
+        \begin{bmatrix}
+            0.229 & 0.587 & 0.114 \\
+            0.500 & -0.418 & -0.082 \\
+            -0.168 & -0.331 & 0.500
+        \end{bmatrix}
+        *
+        \begin{bmatrix}
+            R \\
+            G \\
+            B
+        \end{bmatrix}
+    \]
+        
+    Natomiast konwersję odwrotną można wykonać odwracając powyższy wzór:
+    \[
+        \begin{bmatrix}
+            R \\
+            G \\
+            B
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            Y \\
+            Cr - 128 \\
+            Cb - 128
+        \end{bmatrix}
+        *
+        \begin{bmatrix}
+            0.229 & 0.587 & 0.114 \\
+            0.500 & -0.418 & -0.082 \\
+            -0.168 & -0.331 & 0.500
+        \end{bmatrix}^{-1}
+    \]
+
+
+    \subsection{Teoria}
+    Model YCrCb jest powszechnie używany w przetwarzaniu obrazów i wideo. 
+    Składa się z trzech składowych: luminancji (Y), czerwoności (Cr) i niebieskości (Cb). 
+    Kolor zielony jest wyznaczany matematycznie na podstawie powyższych składowych.
+    MOdel ten, jest efektywny w przechowywaniu danych i pozwala na oddzielenie informacji o jasności 
+    od informacji o kolorach. 
+
+    \begin{itemize}
+        \item Składowa Y (luminancja):
+        \begin{itemize}
+            \item Reprezentuje jasność piksela obrazu.
+            \item Przechowuje informacje o intensywności światła lub luminancji dla każdego piksela.
+        \end{itemize}
+        \item Składowe Cr i Cb (chrominancja):
+        \begin{itemize}
+            \item Reprezentują informacje o kolorach pikseli obrazu.
+            \item Składowa Cr odnosi się do różnicy między składową czerwieni a składową luminancji.
+            \item Składowa Cb odnosi się do różnicy między składową niebieskości a składową luminancji.
+            \item Te składowe są wykorzystywane do opisu kolorów w odniesieniu do osi luminancji, 
+            co sprawia, że model jest efektywny i oszczędny w przechowywaniu informacji o kolorach.
+        \end{itemize}
+    \end{itemize}
+    
+    Źródła: [\cite{YCbCr1}], [\cite{YCbCr2}]
+
+
+    \section{Prezentacja wykonanego zadania}
+    \begin{figure}[H]
+        \centering
+        \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad3.png}%
+        }
+        \caption{Okno przedstawiające oryginalne zdjęcie wraz z kanałami Y, Cb, Cr oraz obrazem po konwersji odwrotnej}
+    \end{figure}
+
+
+\bibliographystyle{plainnat}
+\bibliography{TexBase/Bibliography.bib}
+
+\end{document}

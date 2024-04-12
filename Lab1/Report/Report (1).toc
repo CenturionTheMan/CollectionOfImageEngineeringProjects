@@ -4,6 +4,12 @@
 \contentsline {subsection}{\numberline {1.2}Teoria}{2}{subsection.1.2}%
 \contentsline {subsection}{\numberline {1.3}Prezentacja wykonanego zadania}{3}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Wizualizację wybranych filtrów}{3}{subsection.1.4}%
-\contentsline {subsection}{\numberline {1.5}Eksperymenty z modyfikacją maski}{3}{subsection.1.5}%
-\contentsline {section}{\numberline {2}Zadanie drugie}{3}{section.2}%
-\contentsline {section}{\numberline {3}Zadanie trzecie}{3}{section.3}%
+\contentsline {subsection}{\numberline {1.5}Eksperymenty z modyfikacją maski}{5}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Zadanie drugie}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Cel ćwiczenia}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Prezentacja wykonanego zadania}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Eksperymenty z innymi macierzami przekształceń}{7}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Zadanie trzecie}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Cel ćwiczenia}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Teoria}{9}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Prezentacja wykonanego zadania}{10}{subsection.3.3}%

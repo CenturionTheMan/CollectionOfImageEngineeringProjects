@@ -1,3 +1,5 @@
+import os.path
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
@@ -38,6 +40,7 @@ def exercise2():
     matrix = np.array([[0.393, 0.769, 0.189],
                        [0.349, 0.689, 0.168],
                        [0.272, 0.534, 0.131]])
+
     converted_data = np.zeros(data.shape)
     for x in range(data.shape[0]):
         for y in range(data.shape[1]):
@@ -104,18 +107,21 @@ def exercise4():
             imageYCrCb[x][y] = YCrCb
 
 
-
-
 if __name__ == '__main__':
-    image = cv.imread('image3.jpg')
+    path = './image3.jpg'
+    while not os.path.isfile(path):
+        print(f'Nie znaleziono pliku {path}!')
+        path = input('Wskaz sciezke do pliku: ')
+    image = cv.imread(path)
     image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 
     user_input = ''
     while input != '':
-        print('[0] - Wyjście')
+        print('[0] - Wyjscie')
         print('[1] - Zadanie 1')
         print('[2] - Zadanie 2')
         print('[3] - Zadanie 3')
+        print('[4] - Wybierz sciezke do zdjecia (bazowo zdjecie: image3.jpg)')
         user_input = input('Wybierz opcje: ')
         user_input = user_input.replace(' ', '').replace('\n', ' ')
         if user_input == '0':
@@ -129,6 +135,13 @@ if __name__ == '__main__':
         elif user_input == '3':
             print('Ładuje zadanie 3 ...')
             exercise3()
+        elif user_input == '4':
+            path = input('Podaj sciezke: ')
+            if os.path.isfile(path):
+                image = cv.imread(path)
+                image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
+            else:
+                print('Plik nie istnieje!')
         else:
             print('Nie rozpoznano opcji')
         print('\n')
