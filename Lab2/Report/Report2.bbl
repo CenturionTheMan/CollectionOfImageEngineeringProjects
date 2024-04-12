@@ -1,9 +1,29 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{5}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[??(??{\natexlab{a}})]{P3}
+??
+\newblock ppm p3 image file format.
+\newblock
+  \url{https://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/ppmformat.html},
+  ??{\natexlab{a}}.
+
+\bibitem[??(??{\natexlab{b}})]{PPM2}
+??
+\newblock Simple image file formats.
+\newblock
+  \url{https://people.computing.clemson.edu/~dhouse/courses/405/notes/ppm-files.pdf},
+  ??{\natexlab{b}}.
+
+\bibitem[rpricejones@wooster.edu(??)]{PPM}
+rpricejones@wooster.edu.
+\newblock Chapter: Ppm image format.
+\newblock
+  \url{https://csweb.wooster.edu/rpricejones/cs110/labs/lab7/lab74.html}, ??
 
 \bibitem[wikipedia(??{\natexlab{a}})]{Downsampling}
 wikipedia.
