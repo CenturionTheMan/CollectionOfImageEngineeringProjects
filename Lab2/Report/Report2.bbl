@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,12 +12,18 @@
   \url{https://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/ppmformat.html},
   ??{\natexlab{a}}.
 
-\bibitem[??(??{\natexlab{b}})]{PPM2}
+\bibitem[??(??{\natexlab{b}})]{PNG}
+??
+\newblock Png (portable network graphics) specification, version 1.2.
+\newblock \url{http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html},
+  ??{\natexlab{b}}.
+
+\bibitem[??(??{\natexlab{c}})]{PPM2}
 ??
 \newblock Simple image file formats.
 \newblock
   \url{https://people.computing.clemson.edu/~dhouse/courses/405/notes/ppm-files.pdf},
-  ??{\natexlab{b}}.
+  ??{\natexlab{c}}.
 
 \bibitem[rpricejones@wooster.edu(??)]{PPM}
 rpricejones@wooster.edu.

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Report2"] 1712960685 "Report2.aux" "Report2.bbl" "Report2" 1712960689
+["bibtex Report2"] 1712992511 "Report2.aux" "Report2.bbl" "Report2" 1712992512
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "Report2.aux" 1712960689 4824 1915ed8e810268d3156b4aafa4c057ea "pdflatex"
-  "TexBase/Bibliography.bib" 1712960652 1062 f0836a2b5abc7f38d096abe146e0db5a ""
+  "Report2.aux" 1712992466 5642 2e0498fd7db35007b6121368cd77d17f "pdflatex"
+  "TexBase/Bibliography.bib" 1712992510 1291 e9957e92d590ba36701a0e5bda09545b ""
   (generated)
   "Report2.bbl"
   "Report2.blg"
-["pdflatex"] 1712960686 "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab2/Report/Report2.tex" "Report2.pdf" "Report2" 1712960689
+["pdflatex"] 1712992458 "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab2/Report/Report2.tex" "Report2.pdf" "Report2" 1712992512
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1705749182 135090 8e080aa41c982b312d5a019fef897b83 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1666522869 25420 8c5f897251efa0e2695fde2f53241e74 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1666522874 31952 5085673760ff2c21d238bc03344961c7 ""
@@ -172,14 +172,16 @@
   "Img/zad1z.png" 1712938366 414253 8f017a464b36e003c1f5d567d51a0d53 ""
   "Img/zad2.png" 1712942085 13052 6e99c6bdba94dc2730bdf8a7fe65393e ""
   "Img/zad2z.png" 1712939058 15689 18dafc4f97d37413a9b22271a592d52e ""
-  "Report2.aux" 1712960689 4824 1915ed8e810268d3156b4aafa4c057ea "pdflatex"
-  "Report2.bbl" 1712960686 1271 c047027f3b04b2e7f702aa94531f7416 "bibtex Report2"
-  "Report2.lof" 1712960689 1039 7ba68ca8ecd7f48e4108e0e76db472fb "pdflatex"
-  "Report2.out" 1712960689 2093 c9b7563b12498fafd2fc20c17c0c7602 "pdflatex"
-  "Report2.tex" 1712960676 7800 b198fe2abd3cfa0ec7131c05a3f9ac00 ""
-  "Report2.toc" 1712960689 1223 d63a130ff9c2b458b7c3610bac9d41cc "pdflatex"
+  "Img/zad3.png" 1712991858 19633 1f5a217097b99ec30ff16bd525d0489d ""
+  "Img/zad3_0.png" 1712992390 139782 2f40c7d890de81eda13d843c58c37c15 ""
+  "Report2.aux" 1712992466 5642 2e0498fd7db35007b6121368cd77d17f "pdflatex"
+  "Report2.bbl" 1712992511 1271 c047027f3b04b2e7f702aa94531f7416 "bibtex Report2"
+  "Report2.lof" 1712992466 1300 3c5a4aedf52ce67328a6a4f0b741d03c "pdflatex"
+  "Report2.out" 1712992466 2603 6851cceb67b58b2434313c052887e7cc "pdflatex"
+  "Report2.tex" 1712992452 8681 4b09c492740240beccd229977b017317 ""
+  "Report2.toc" 1712992466 1533 55f2debd6acc485d877fc8156c875c61 "pdflatex"
   "TexBase/DocumentBase.tex" 1712937838 3182 a8fd584c337c4ec4bd080ff41cabf1fa ""
-  "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab2/Report/Report2.tex" 1712960676 7800 b198fe2abd3cfa0ec7131c05a3f9ac00 ""
+  "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab2/Report/Report2.tex" 1712992452 8681 4b09c492740240beccd229977b017317 ""
   (generated)
   "Report2.aux"
   "Report2.lof"
