@@ -203,13 +203,12 @@
         nagłówku (IHDR), paleta kolorów (PLTE), rzeczywiste dane obrazu (IDAT) oraz końcowy znacznik (IEND).
 
         \subsubsection*{Strumień zlib}
-        Wewnątrz chunka IDAT, dane obrazu są kompresowane za pomocą algorytmu DEFLATE, 
-        który jest częścią biblioteki zlib.
+
+        Wewnątrz chunka IDAT, dane obrazu są kompresowane za pomocą algorytmu DEFLATE, który jest częścią biblioteki zlib.
 
         \subsubsection*{Filtracja i tryby kompresji}
-        W procesie kompresji wewnątrz chunka IDAT, każdy wiersz obrazu jest poddawany filtracji. 
-        Istnieje pięć dostępnych filtrów, które są stosowane w celu optymalizacji procesu kompresji i 
-        poprawy efektywności przechowywania danych obrazu.
+
+        W procesie kompresji wewnątrz chunka IDAT, każdy wiersz obrazu jest poddawany filtracji. Istnieje pięć dostępnych filtrów, które są stosowane w celu optymalizacji procesu kompresji i poprawy efektywności przechowywania danych obrazu.
 
     Źródła: \cite{PNG}
 

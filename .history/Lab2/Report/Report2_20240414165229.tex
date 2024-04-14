@@ -186,30 +186,27 @@
     Utworzony obraz ma być możliwy do odczytania i wyświetlania w programie graficznym obsługującym PNG.
 
     \subsection{Teoria}
-    Format plików PNG (Portable Network Graphics) jest formatem obrazów rastrowych. 
-    Charakteryzuje się on zachowaniem przezroczystości oraz kompresją bezstratną.
-
-        \subsubsection*{Nagłówek PNG}
-
-        Początek każdego pliku PNG jest określony przez 8-bajtowy nagłówek. Specyficzna 
-        sekwencja znaków, znana jako sygnatura: 137 80 78 71 13 10 26 10 (dziesiętne), 
-        identyfikuje plik jako format PNG.
-
-        \subsubsection*{Chunki}
-        Struktura plików PNG opiera się na "chunkach", które są to strukturami danych zdefiniowanymi 
-        przez specyfikację PNG. Każdy chunk składa się z czterech głównych części: długość danych, 
-        typ chunka, rzeczywiste dane oraz wartość CRC (Cyclic Redundancy Check) służąca do weryfikacji 
-        integralności danych. Chunki mogą reprezentować różne aspekty obrazu, takie jak informacje o 
-        nagłówku (IHDR), paleta kolorów (PLTE), rzeczywiste dane obrazu (IDAT) oraz końcowy znacznik (IEND).
-
-        \subsubsection*{Strumień zlib}
-        Wewnątrz chunka IDAT, dane obrazu są kompresowane za pomocą algorytmu DEFLATE, 
-        który jest częścią biblioteki zlib.
-
-        \subsubsection*{Filtracja i tryby kompresji}
-        W procesie kompresji wewnątrz chunka IDAT, każdy wiersz obrazu jest poddawany filtracji. 
-        Istnieje pięć dostępnych filtrów, które są stosowane w celu optymalizacji procesu kompresji i 
-        poprawy efektywności przechowywania danych obrazu.
+    \textbf{Plik PNG} (Portable Network Graphics) to format obrazów rastrowych, który charakteryzuje się 
+    zachowaniem przezroczystości oraz kompresją bezstratną.
+    
+    \begin{itemize}
+        \item Nagłówek
+        \begin{itemize}
+            \item Początkiem pliku PNG jest stała wartość 8-bitowa, która identyfikuje format jako plik PNG.
+            \item Sygnatura tego formatu to: 137 80 78 71 13 10 26 10 (wartości dziesiętne).
+        \end{itemize}
+        \item \textit{Chunki}
+        \begin{itemize}
+            \item Plik PNG składa się z "chunków", które zawierają różne rodzaje danych.
+            \item Każdy chunk ma określoną strukturę:
+            \begin{itemize}
+                \item Długość: 4-bajtowa wartość określająca liczbę bajtów w polu danych.
+                \item Typ: 4-bajtowa wartość określająca typ chunku (np. IHDR, PLTE, IDAT).
+                \item Dane: Rzeczywiste dane chunka.
+                \item CRC: 4-bajtowa wartość CRC (Cyclic Redundancy Check) służąca do weryfikacji integralności danych.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 
     Źródła: \cite{PNG}
 

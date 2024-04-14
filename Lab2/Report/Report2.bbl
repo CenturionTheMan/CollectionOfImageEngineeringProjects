@@ -12,18 +12,22 @@
   \url{https://users.csc.calpoly.edu/~akeen/courses/csc101/handouts/assignments/ppmformat.html},
   ??{\natexlab{a}}.
 
-\bibitem[??(??{\natexlab{b}})]{PNG}
-??
-\newblock Png (portable network graphics) specification, version 1.2.
-\newblock \url{http://www.libpng.org/pub/png/spec/1.2/PNG-Structure.html},
-  ??{\natexlab{b}}.
-
-\bibitem[??(??{\natexlab{c}})]{PPM2}
+\bibitem[??(??{\natexlab{b}})]{PPM2}
 ??
 \newblock Simple image file formats.
 \newblock
   \url{https://people.computing.clemson.edu/~dhouse/courses/405/notes/ppm-files.pdf},
-  ??{\natexlab{c}}.
+  ??{\natexlab{b}}.
+
+\bibitem[Crocker et~al.(1999)Crocker, Dilger, Fromme, loup Gailly, Jakulin,
+  Lane, Lehmann, Lilley, Mortensen, Pickens, Randers-Pehrson, Roelofs, van
+  Schaik, Schmidt, and Wegner]{PNG}
+Lee~Daniel Crocker, Andreas Dilger, Oliver Fromme, Jean loup Gailly, Aleks
+  Jakulin, Tom Lane, Alexander Lehmann, Chris Lilley, Owen Mortensen, Keith~S.
+  Pickens, Glenn Randers-Pehrson, Greg Roelofs, Willem van Schaik, Paul
+  Schmidt, and Tim Wegner.
+\newblock Png (portable network graphics) specification, version 1.2.
+\newblock \url{http://www.libpng.org/pub/png/spec/1.2/PNG-Contents.html}, 1999.
 
 \bibitem[rpricejones@wooster.edu(??)]{PPM}
 rpricejones@wooster.edu.
