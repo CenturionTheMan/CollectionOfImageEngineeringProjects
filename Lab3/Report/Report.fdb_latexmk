@@ -1,6 +1,14 @@
 # Fdb version 4
-["pdflatex"] 1714311132 "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" "Report.pdf" "Report" 1714311137 0
-  "C:/Users/dzied/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1705742740 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["bibtex Report"] 1714313472 "Report.aux" "Report.bbl" "Report" 1714313642 0
+  "./TexBase/Bibliography.bib" 1714313081 192 5376449355c9b824f66f9cef3d786871 ""
+  "C:/Users/dzied/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
+  "Report.aux" 1714313641 3711 29d22f22a8add4d9540d13bf6200dd5c "pdflatex"
+  (generated)
+  "Report.bbl"
+  "Report.blg"
+  (rewritten before read)
+["pdflatex"] 1714313637 "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" "Report.pdf" "Report" 1714313642 0
+  "C:/Users/dzied/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1714312482 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1681850454 25420 04ac07ffab4e32faa5da83e90bd3a8db ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1681850446 31952 cc2b997ac71a9051a408e593cbba03a1 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1681850448 40136 6479815b5314883b36f6b1ed259f1ed6 ""
@@ -8,6 +16,7 @@
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1000.pk" 1681850451 23808 ce84222c4b538c04856536e78f54f18e ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk" 1683527740 28440 2c3964b314480abebbcaa4fd6bbd0f4d ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1440.pk" 1681850460 34320 a991d4d44124cc07d2a4fa7884ca057d ""
+  "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ectt1000.pk" 1683526290 20028 fc1eb1f3fc8e11b32e4c05ef3945dc80 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1683527738 11548 0a2b3f4965433b69a1aa24bc5159b9d5 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1681851046 23178960 6a5364c2bcdabc197f2583c41fbc8047 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1000.tfm" 993061956 3200 328792ff19833a39406f06fa0555a6dc ""
@@ -18,6 +27,7 @@
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1200.tfm" 993062126 3152 4850ff0163852b7fab34bd55e1197f28 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1440.tfm" 993062128 3168 3bd7b08ba4330af81521911744311212 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1728.tfm" 993062128 3168 11457c8185ce67fb79662ba8b03d6db1 ""
+  "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ectt1000.tfm" 993062340 1348 d70ddf2d5d512b838e50a335e385e919 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/tcrm1000.tfm" 993062508 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1233955448 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1233955448 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
@@ -74,6 +84,7 @@
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/base/ifthen.sty" 1669847796 5319 48d7f3cfa322abd2788e3c09d624b922 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/base/inputenc.sty" 1669847796 5048 84b05796b49b69e2d4257d537721c960 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/base/size10.clo" 1669847796 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/base/t1cmtt.fd" 1669847796 2443 f9c272838e65ac147422f32fe87b76a1 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/base/textcomp.sty" 1669847796 2894 f2f8ee7d4fb94263f9f255fa22cab2d3 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/blindtext/blindtext.sty" 1623002099 47295 de48b7f8ebf4b54709a2f6b2c7106dd5 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/booktabs/booktabs.sty" 1579097235 6253 f1cb470c9199e7110a27851508ed7a5c ""
@@ -147,13 +158,16 @@
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388494052 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1673965817 123 a302f2c651a95033260db60e51527ae8 ""
-  "Report.aux" 1714311136 1315 3bb4cfc65fedb607a0b4abf89823ef9c "pdflatex"
-  "Report.lof" 1714311136 29 1e1405008ff3f86b64f7d6ea4d45a69d "pdflatex"
-  "Report.out" 1714311136 1070 37a1e8d3ea7b43f86d9c703cec53118f "pdflatex"
-  "Report.tex" 1714311127 2380 3dec58b41374c0e7d040cae8eb383234 ""
-  "Report.toc" 1714311136 486 7dbf84dca3904b0771e6f82c797b8693 "pdflatex"
+  "Img/zad45.png" 1714312307 39259 0acfbd88e1513666d4313163031dc1f3 ""
+  "Img/zad45_1.png" 1714312323 23919 6f07d418bf27234c8dd984eea2794409 ""
+  "Report.aux" 1714313641 3711 29d22f22a8add4d9540d13bf6200dd5c "pdflatex"
+  "Report.bbl" 1714313472 439 3a102dddad972bfcab88651528d322a9 "bibtex Report"
+  "Report.lof" 1714313641 367 055ab7e87b5d5b3aec2128a135060583 "pdflatex"
+  "Report.out" 1714313641 4016 5e3502699e45d99964fafec3d9f18a9d "pdflatex"
+  "Report.tex" 1714313636 6787 f40ed8ae1274892c756f9a4904cc9646 ""
+  "Report.toc" 1714313641 1579 dcac4ed72146cf9b64684646201c7a7c "pdflatex"
   "TexBase/DocumentBase.tex" 1714308968 3182 9da74a8897d955e1bf037248f7be776e ""
-  "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" 1714311127 2380 3dec58b41374c0e7d040cae8eb383234 ""
+  "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" 1714313636 6787 f40ed8ae1274892c756f9a4904cc9646 ""
   (generated)
   "Report.aux"
   "Report.lof"

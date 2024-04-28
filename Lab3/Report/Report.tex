@@ -2,54 +2,134 @@
 \input{TexBase/DocumentBase.tex}
 
 
-
-% \bibliographystyle{plainnat}
-% \bibliography{TexBase/Bibliography}
-
 \section{Temat laboratorium}
 W ramach trzecich zajęć laboratoryjnych mieliśmy wykonać zadanie 4 i 5 z listy drugiej.
-Punkty te dotyczyły implementacji algorytmu JPEG. 
+Punkty te dotyczyły implementacji algorytmu JPEG.
 
 
 \section{Zadania do wykonania i plan pracy}
 
-    \subsection{Zadanie 4: Implementacja części algorytmu JPEG}
-    Zadanie czwarte zakładało uproszczoną implementację algorytmu JPEG. W ramach tego punktu mieliśmy
-    zaimplementować:
-    \begin{itemize}
-        \item Kroki: 0, 1, 2, 3, 7, 8 algorytmu JPEG. Gdzie:
-        \begin{itemize}
-            \item Krok 0: Wczytanie obrazu wejściowego,
-            \item Krok 1: Konwersja modelu barw: RGB -> YCbCr,
-            \item Krok 2: Przeskalowanie w dół macierzy składowych Cb i Cr,
-            \item Krok 3: Podział na bloki o rozmiarze 8x8,
-            \item Krok 7: Zwinięcie każdego bloku 8x8 do wiersza 1x64 - algorytm ZigZag,
-            \item Krok 8: Zakodowanie danych obrazu,
-        \end{itemize}
-        \item Zmierzyć liczbę bajtów powstałego obrazu po kroku 8
-        \item Ocenić wpływ kroku 2. na rozmiar i wygląd, poprzez stworzenie trzech wariancji obrazu:
-        \begin{itemize}
-            \item bez próbkowania,
-            \item z próbkowaniem ci drugi element,
-            \item z próbkowaniem co czwarty element.
-        \end{itemize}
-        \item Dokonać dekompresji poprzez odwrócenie powyższych kroków.
-    \end{itemize}
+\subsection{Zadanie 4: Implementacja części algorytmu JPEG}
+Zadanie czwarte zakładało uproszczoną implementację algorytmu JPEG. W ramach tego punktu mieliśmy
+zaimplementować:
+\begin{itemize}
+    \item Kroki: 0, 1, 2, 3, 7, 8 algorytmu JPEG. Gdzie:
+          \begin{itemize}
+              \item Krok 0: Wczytanie obrazu wejściowego,
+              \item Krok 1: Konwersja modelu barw: RGB -> YCbCr,
+              \item Krok 2: Przeskalowanie w dół macierzy składowych Cb i Cr,
+              \item Krok 3: Podział na bloki o rozmiarze 8x8,
+              \item Krok 7: Zwinięcie każdego bloku 8x8 do wiersza 1x64 - algorytm ZigZag,
+              \item Krok 8: Zakodowanie danych obrazu,
+          \end{itemize}
+    \item Zmierzyć liczbę bajtów powstałego obrazu po kroku 8
+    \item Ocenić wpływ kroku 2. na rozmiar i wygląd, poprzez stworzenie trzech wariancji obrazu:
+          \begin{itemize}
+              \item bez próbkowania,
+              \item z próbkowaniem ci drugi element,
+              \item z próbkowaniem co czwarty element.
+          \end{itemize}
+    \item Dokonać dekompresji poprzez odwrócenie powyższych kroków.
+\end{itemize}
 
-    \subsection{Zadanie 5: Dokończenie implementacji algorytmu JPEG}
-    Zadanie piąte zakładało dokończenie implementacji algorytmu JPEG. W ramach tego punktu mieliśmy
-    zaimplementować:
-    \begin{itemize}
-        \item Pozostałe kroki algorytmu:
-        \begin{itemize}
-            \item Krok 4: Wykonanie dyskretnej transformacji cosinusowej na każdym bloku obrazu,
-            \item Krok 5: Podzielenie każdego bloku obrazu przez macierz kwantyzacji,
-            \item Krok 6: Zaokrąglenie wartości w każdym bloku do liczb całkowitych.
-        \end{itemize}
-        \item Ocenić jak wybór czynnika QF wpływa na rozmiar i wygląd obrazka.
-        \item Dokonać dekompresji poprzez odwrócenie powyższych kroków.
-    \end{itemize}
-    
+\subsection{Zadanie 5: Dokończenie implementacji algorytmu JPEG}
+Zadanie piąte zakładało dokończenie implementacji algorytmu JPEG. W ramach tego punktu mieliśmy
+zaimplementować:
+\begin{itemize}
+    \item Pozostałe kroki algorytmu:
+          \begin{itemize}
+              \item Krok 4: Wykonanie dyskretnej transformacji cosinusowej na każdym bloku obrazu,
+              \item Krok 5: Podzielenie każdego bloku obrazu przez macierz kwantyzacji,
+              \item Krok 6: Zaokrąglenie wartości w każdym bloku do liczb całkowitych.
+          \end{itemize}
+    \item Ocenić jak wybór czynnika QF wpływa na rozmiar i wygląd obrazka.
+    \item Dokonać dekompresji poprzez odwrócenie powyższych kroków.
+\end{itemize}
+
 \section{Teoria}
+
+Format JPEG (ang. Joint Photographic Experts Group) jest powszechnie stosowanym standardem kompresji
+stratnej do obrazów cyfrowych. Algorytm JPEG składa się z kilku etapów, które pozwalają na efektywną
+redukcję rozmiaru pliku przy minimalnej utracie jakości obrazu.
+
+\subsection{Konwersja modelu barw: RGB -> YCbCr}
+W pierwszym kroku obraz jest konwertowany z modelu barw RGB do przestrzeni barw YCbCr. Model YCbCr składa
+się z trzech składowych: Y (luminancja), Cb (chrominancja niebieska) i Cr (chrominancja czerwona).
+Konwersja ta pozwala na oddzielenie informacji o jasności od informacji o barwie, co ułatwia dalszą kompresję.
+
+\subsection{Przeskalowanie w dół macierzy składowych Cb i Cr}
+Kolejnym krokiem jest przeskalowanie macierzy składowych Cb i Cr, które odpowiadają za informacje o barwie,
+przy użyciu technik próbkowania, takich jak próbkowanie co drugi element lub co czwarty element.
+To przeskalowanie pozwala na zmniejszenie rozmiaru danych przy minimalnej utracie jakości obrazu.
+
+\subsection{Podział obrazu na bloki o rozmiarze 8x8}
+Obraz jest dzielony na niewielkie bloki o stałym rozmiarze 8 na 8 pikseli. Ten krok umożliwia stosowanie
+transformacji i kwantyzacji na mniejszych fragmentach obrazu, co ułatwia kompresję.
+
+\subsection{Wykonanie dyskretnej transformacji cosinusowej (DCT)} %TODO to lepiej opisać
+Każdy blok obrazu jest poddawany dyskretnej transformacji cosinusowej (DCT), która przekształca blok
+pikseli z dziedziny przestrzennej do dziedziny częstotliwości. DCT pozwala na koncentrację energii
+sygnału obrazu w niewielkiej liczbie współczynników, co ułatwia kwantyzację.
+
+\subsection{Podzielenie każdego bloku obrazu przez macierz kwantyzacji} %TODO to lepiej opisać
+Wyniki DCT są dzielone przez macierz kwantyzacji, która zawiera współczynniki kwantyzacji dla różnych
+częstotliwości.
+Wysokie wartości w macierzy kwantyzacji prowadzą do większej utraty informacji i większej kompresji.
+
+\subsection{Zaokrąglenie wartości w każdym bloku do liczb całkowitych}
+Po podzieleniu przez macierz kwantyzacji wartości wynikowe są zaokrąglane do najbliższych liczb całkowitych,
+co dodatkowo redukuje rozmiar danych.
+
+\subsection{Zwinięcie każdego bloku 8x8 do wiersza 1x64 - algorytm ZigZag}
+W celu dalszej kompresji, współczynniki kwantyzacji są uporządkowywane za pomocą
+algorytmu ZigZag, który umożliwia efektywne kodowanie długich sekwencji zer.
+
+\subsection{Zakodowanie danych obrazu – m.in. algorytmem Huffmana} %TODO Opisać algorytm Huffmana i upewnić się że go używam
+Ostatecznie, dane obrazu są kodowane za pomocą różnych algorytmów kompresji, takich
+jak algorytm Huffmana, który redukuje redundancję danych i dalszy zmniejsza rozmiar pliku.
+
+Algorytm JPEG umożliwia osiągnięcie znacznej kompresji obrazu przy zachowaniu akceptowalnej jakości wizualnej.
+Parametry takie jak czynnik jakości (Quality Factor) pozwalają na regulację kompromisu pomiędzy
+jakością obrazu a stopniem kompresji.
+
+
+% TODO Więcej źródeł
+Źródła: \cite{Fileformat}
+
+\section{Prezentacja wykonanego zadania}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{Img/zad45.png}%
+    }
+    \caption{Prezentacja oryginalnego obrazu wraz z wariacjami po kompresji i dekompresji (z różnymi parametrami)}
+    \label{fig:zad45}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth / 2}{!}{%
+        \includegraphics{Img/zad45_1.png}%
+    }
+    \caption{Logi konsoli opisujące rozmiary obrazów po kompresji (z różnymi parametrami)}
+    \label{fig:zad45_1}
+\end{figure}
+
+\section{Wnioski}
+Podczas laboratorium pomyślnie zaimplementowałem algorytm JPEG.
+Udało mi się zrozumieć poszczególne kroki algorytmu i ich wpływ na rozmiar i jakość obrazu.
+Na podstawie wykonanych zadań zauważyłem, że wybór parametrów takich jak czynnik jakości (QF) czy technika
+próbkowania ma znaczący wpływ na rozmiar i jakość obrazu.
+\begin{itemize}
+    \item Wraz ze wzrostem czynnika jakości (QF) rośnie jakość obrazu, ale maleje stopień kompresji (co za tym
+          idzie, zwiększa się rozmiar obrazu).
+    \item Technika próbkowania również wpływa na rozmiar obrazu. Wraz ze wzrostem stopnia próbkowania
+          maleje rozmiar obrazu, ale rośnie utrata jakości.
+\end{itemize}
+
+\bibliographystyle{plainnat}
+\bibliography{TexBase/Bibliography}
 
 \end{document}

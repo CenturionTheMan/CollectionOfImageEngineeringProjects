@@ -202,10 +202,10 @@ def _scale(QF):
     return scale
 
 
-def QY(QF=2):
+def QY(QF=85):
     return _QY * _scale(QF)
 
 
-def QC(QF=2):
+def QC(QF=85):
     return _QC * _scale(QF)
 
