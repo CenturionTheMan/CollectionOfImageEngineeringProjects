@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex Report"] 1714508459 "Report.aux" "Report.bbl" "Report" 1714508549
+["bibtex Report"] 1714506525 "Report.aux" "Report.bbl" "Report" 1714506900
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/bibtex/bst/natbib/plainnat.bst" 1284455456 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "Report.aux" 1714508548 3789 0a4457c600a33168fb20c316a9803e5e "pdflatex"
+  "Report.aux" 1714506899 3817 053a5cbfc7b81f3ae3ce5ddd465a4691 "pdflatex"
   "TexBase/Bibliography.bib" 1714401936 405 723e42f0b861e15bcbff1b3b56f39588 ""
   (generated)
   "Report.bbl"
   "Report.blg"
-["pdflatex"] 1714508541 "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" "Report.pdf" "Report" 1714508549
+["pdflatex"] 1714506892 "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" "Report.pdf" "Report" 1714506900
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1705749182 135090 8e080aa41c982b312d5a019fef897b83 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1000.pk" 1666522869 25420 8c5f897251efa0e2695fde2f53241e74 ""
   "C:/Users/dzied/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1666522874 31952 5085673760ff2c21d238bc03344961c7 ""
@@ -22,8 +22,6 @@
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1200.tfm" 993061958 3200 b8d69bc738e5ef3e08cefeef3109ff56 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1440.tfm" 993061960 3196 0b37fa3083e15c57cfa8c4ff52f2807a ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecbx1728.tfm" 993061962 3204 d35cb76836b6cb4ed404dd64a550530d ""
-  "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm0500.tfm" 993062114 3160 7643a152c0e9200a0a8161b2bb3a452d ""
-  "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm0700.tfm" 993062116 3168 c739b83da3134ef1007979877c1089cf ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1000.tfm" 993062122 3148 7e594c8240c71e432203f65ab5f95a51 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1200.tfm" 993062126 3152 4850ff0163852b7fab34bd55e1197f28 ""
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/fonts/tfm/jknappen/ec/ecrm1440.tfm" 993062128 3168 3bd7b08ba4330af81521911744311212 ""
@@ -168,14 +166,14 @@
   "C:/Users/dzied/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1673965817 123 a302f2c651a95033260db60e51527ae8 ""
   "Img/zad45.png" 1714312307 39259 0acfbd88e1513666d4313163031dc1f3 ""
   "Img/zad45_1.png" 1714312323 23919 6f07d418bf27234c8dd984eea2794409 ""
-  "Report.aux" 1714508548 3789 0a4457c600a33168fb20c316a9803e5e "pdflatex"
-  "Report.bbl" 1714508459 628 3fa6cb5cf9dd79dd473989cc64a36755 "bibtex Report"
-  "Report.lof" 1714508548 367 ad61e8d8a23fb2d7a7560ea743cb2756 "pdflatex"
-  "Report.out" 1714508548 3940 a6a4708d66e7364d8cd02d8bdd2f9186 "pdflatex"
-  "Report.tex" 1714508540 11290 e33545f6876426c492fdc88b161f3b79 ""
-  "Report.toc" 1714508548 1563 5e7f87e9428eeb042c881f16db7f5ecb "pdflatex"
+  "Report.aux" 1714506899 3817 053a5cbfc7b81f3ae3ce5ddd465a4691 "pdflatex"
+  "Report.bbl" 1714506526 628 3fa6cb5cf9dd79dd473989cc64a36755 "bibtex Report"
+  "Report.lof" 1714506899 367 ad61e8d8a23fb2d7a7560ea743cb2756 "pdflatex"
+  "Report.out" 1714506899 4092 1012a02cbbf616007cf1c8c8f21adc78 "pdflatex"
+  "Report.tex" 1714506891 9891 cf189196f4c0013465bd0989f4f4ddbd ""
+  "Report.toc" 1714506899 1591 bd2a51331e1abe60a1ebdab8150bd25d "pdflatex"
   "TexBase/DocumentBase.tex" 1714308968 3182 9da74a8897d955e1bf037248f7be776e ""
-  "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" 1714508540 11290 e33545f6876426c492fdc88b161f3b79 ""
+  "d:/GoogleDriveMirror/Studia/Studia_sem_6/IO/CollectionOfImageEngineeringProjects/Lab3/Report/Report.tex" 1714506891 9891 cf189196f4c0013465bd0989f4f4ddbd ""
   (generated)
   "Report.aux"
   "Report.lof"

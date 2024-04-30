@@ -52,12 +52,12 @@ Format JPEG (ang. Joint Photographic Experts Group) jest powszechnie stosowanym 
 stratnej do obrazów cyfrowych. Algorytm JPEG składa się z kilku etapów, które pozwalają na efektywną
 redukcję rozmiaru pliku przy minimalnej utracie jakości obrazu.
 
-\subsection{Konwersja modelu barw: RGB -> YCbCr}
+\subsection{Konwersja modelu barw RGB do YCbCr}
 W pierwszym kroku obraz jest konwertowany z modelu barw RGB do przestrzeni barw YCbCr. Model YCbCr składa
 się z trzech składowych: Y (luminancja), Cb (chrominancja niebieska) i Cr (chrominancja czerwona).
 Konwersja ta pozwala na oddzielenie informacji o jasności od informacji o barwie, co ułatwia dalszą kompresję.
 
-\subsection{Przeskalowanie w dół macierzy składowych Cb i Cr}
+\subsection{Przeskalowanie w dół (downsampling) macierzy składowych Cb i Cr}
 Kolejnym krokiem jest przeskalowanie macierzy składowych Cb i Cr, które odpowiadają za informacje o barwie,
 przy użyciu technik próbkowania, takich jak próbkowanie co drugi element lub co czwarty element.
 To przeskalowanie pozwala na zmniejszenie rozmiaru danych przy minimalnej utracie jakości obrazu.
@@ -66,35 +66,122 @@ To przeskalowanie pozwala na zmniejszenie rozmiaru danych przy minimalnej utraci
 Obraz jest dzielony na niewielkie bloki o stałym rozmiarze 8 na 8 pikseli. Ten krok umożliwia stosowanie
 transformacji i kwantyzacji na mniejszych fragmentach obrazu, co ułatwia kompresję.
 
-\subsection{Wykonanie dyskretnej transformacji cosinusowej (DCT)} %TODO to lepiej opisać
-Każdy blok obrazu jest poddawany dyskretnej transformacji cosinusowej (DCT), która przekształca blok
-pikseli z dziedziny przestrzennej do dziedziny częstotliwości. DCT pozwala na koncentrację energii
-sygnału obrazu w niewielkiej liczbie współczynników, co ułatwia kwantyzację.
+\subsection{Wykonanie dyskretnej transformacji cosinusowej (DCT)} %?? verify
+Każdy blok pikseli jest poddawany dyskretnej transformacji kosinusowej (DCT).
+DCT zamienia blok pikseli na zestaw współczynników reprezentujących jego składowe częstotliwości.
+Współczynniki te są obliczane za pomocą następującego równania:
 
-\subsection{Podzielenie każdego bloku obrazu przez macierz kwantyzacji} %TODO to lepiej opisać
-Wyniki DCT są dzielone przez macierz kwantyzacji, która zawiera współczynniki kwantyzacji dla różnych
-częstotliwości.
-Wysokie wartości w macierzy kwantyzacji prowadzą do większej utraty informacji i większej kompresji.
+\begin{equation}
+    F(u,v) = \frac{2}{\sqrt{MN}} C(u) C(v) \sum_{m=0}^{m-1} \sum_{n=0}^{n-1} f(m,n) \cos \left( \frac{(2m+1)u\pi}{2M} \right) \cos \left( \frac{(2n+1)v\pi}{2N} \right)
+\end{equation}
+gdzie:
+\begin{itemize}
+    \item $C(u,v)= \frac{1}{\sqrt{2}}$ dla $u,v$ = 0, w przeciwnym wypadku $C(u,v)=1$
+    \item $M$ - ilość wierszy w wejściowym zestawie danych
+    \item $N$ - ilość kolumn w wejściowym zestawie danych
+    \item $m$ - indeksy próbek z wiersza w domenie przestrzeni, gdzie $0\leq m\leq M-1$
+    \item $n$ - indeksy próbek z kolumny w domenie przestrzeni, gdzie $0\leq n\leq N-1$
+    \item $f(m,n)$ - wartości przestrzenne w bloku danych wejściowych
+    \item $u$ - indeks wiersza w domenie częstotliwości
+    \item $v$ - indeks kolumny w domenie częstotliwości
+    \item $F(u,v)$ - współczynniki transformaty w domenie częstotliwości
+\end{itemize}
+
+Przy założeniu, że $M =N = 8$ równanie przyjmuje postać:
+\begin{equation}
+    F(u,v) = \frac{C(v)}{2}\sum_{n=0}^{7}\left[\frac{C(u)}{2} \sum_{m=0}^{7}f(m,n)\cos \left( \frac{(2m+1)u\pi}{16} \right) \right] \cos \left( \frac{(2n+1)v\pi}{16} \right)
+\end{equation}
+
+Transformacja DCT pozwala skutecznie kompresować obrazy poprzez selektywne wyodrębnianie istotnych cech,
+takich jak krawędzie i tekstury, oraz eliminowanie "szumów" niewidocznych dla ludzkiego oka.
+Dzięki analizie częstotliwościowej, DCT umożliwia minimalizację rozmiaru pliku przy zachowaniu
+jakości obrazu.
+
+
+\subsection{Podzielenie każdego bloku obrazu przez macierz kwantyzacji} %?? verify
+Po DCT dla każdego bloku pikseli, współczynniki są
+dzielone przez odpowiadające im elementy macierzy kwantyzacji.
+
+Macierz kwantyzacji zawiera wartości, które określają, jak mocno każdy współczynnik DCT zostanie
+zaokrąglony. Im większe wartości w macierzy kwantyzacji, tym większa kompresja danej informacji.
+
+Parametr jakości \textbf{(quality factor)} jest używany do kontrolowania stopnia kompresji
+i jakości obrazu. Zwiększenie wartości tego parametru prowadzi do mniejszego kompresowania
+współczynników DCT, co oznacza mniejszą stratę informacji i lepszą jakość obrazu,
+ale także większy rozmiar pliku. Zmniejszenie wartości quality factor powoduje większą
+kompresję danych, co prowadzi do mniejszego rozmiaru pliku kosztem jakości obrazu.
+
+\textbf{W tym kroku algorytm staję sie stratny.}
+
+Macierze kwantyzacji, które zostały użyte w zadaniu:
+\begin{equation}
+    \text{Macierz kwantyzacji dla kanału Y} = \begin{bmatrix}
+        16 & 11 & 10 & 16 & 24  & 40  & 51  & 61  \\
+        12 & 12 & 14 & 19 & 26  & 48  & 60  & 55  \\
+        14 & 13 & 16 & 24 & 40  & 57  & 69  & 56  \\
+        14 & 17 & 22 & 29 & 51  & 87  & 80  & 62  \\
+        18 & 22 & 37 & 56 & 68  & 109 & 103 & 77  \\
+        24 & 35 & 55 & 64 & 81  & 104 & 113 & 92  \\
+        49 & 64 & 78 & 87 & 103 & 121 & 120 & 101 \\
+        72 & 92 & 95 & 98 & 112 & 100 & 103 & 99  \\
+    \end{bmatrix}
+\end{equation}
+
+\begin{equation}
+    \text{Macierz kwantyzacji dla kanału Cb i Cr} = \begin{bmatrix}
+        17 & 18 & 24 & 47 & 99 & 99 & 99 & 99 \\
+        18 & 21 & 26 & 66 & 99 & 99 & 99 & 99 \\
+        24 & 26 & 56 & 99 & 99 & 99 & 99 & 99 \\
+        47 & 66 & 99 & 99 & 99 & 99 & 99 & 99 \\
+        99 & 99 & 99 & 99 & 99 & 99 & 99 & 99 \\
+        99 & 99 & 99 & 99 & 99 & 99 & 99 & 99 \\
+        99 & 99 & 99 & 99 & 99 & 99 & 99 & 99 \\
+        99 & 99 & 99 & 99 & 99 & 99 & 99 & 99 \\
+    \end{bmatrix}
+\end{equation}
+
 
 \subsection{Zaokrąglenie wartości w każdym bloku do liczb całkowitych}
 Po podzieleniu przez macierz kwantyzacji wartości wynikowe są zaokrąglane do najbliższych liczb całkowitych,
 co dodatkowo redukuje rozmiar danych.
 
 \subsection{Zwinięcie każdego bloku 8x8 do wiersza 1x64 - algorytm ZigZag}
-W celu dalszej kompresji, współczynniki kwantyzacji są uporządkowywane za pomocą
-algorytmu ZigZag, który umożliwia efektywne kodowanie długich sekwencji zer.
+Następnie algorytm ZigZag dokonuje się transformacji macierzy 8x8, do jednego ciągu 64 elementów.
+Proces ten jest realizowany przy użyciu algorytmu ZigZag. Algorytm ten polega na skanowaniu bloku 8x8
+w sposób skośny, przemieszczając się między kolejnymi elementami macierzy wzdłuż ścieżki przypominającej
+kształt litery "Z". W efekcie, kolejne wartości są uporządkowane w jednym ciągu,
+który jest następnie wykorzystywany do dalszej obróbki i kodowania danych.
 
-\subsection{Zakodowanie danych obrazu – m.in. algorytmem Huffmana} %TODO Opisać algorytm Huffmana i upewnić się że go używam
-Ostatecznie, dane obrazu są kodowane za pomocą różnych algorytmów kompresji, takich
-jak algorytm Huffmana, który redukuje redundancję danych i dalszy zmniejsza rozmiar pliku.
+\subsection{Zakodowanie danych obrazu} %?? verify
+W ostatnim etapie procesu kompresji obrazu, wykorzystuje się zaawansowane techniki
+kodowania danych w celu dalszej redukcji rozmiaru pliku.
+WYkorzystałem w tym celu algorytm DEFLATE, który jest popularnym i
+wydajnym algorytmem kompresji danych.
 
-Algorytm JPEG umożliwia osiągnięcie znacznej kompresji obrazu przy zachowaniu akceptowalnej jakości wizualnej.
-Parametry takie jak czynnik jakości (Quality Factor) pozwalają na regulację kompromisu pomiędzy
-jakością obrazu a stopniem kompresji.
+\textbf{Algorytm DEFLATE} łączy w sobie dwa główne mechanizmy kompresji:
+algorytm LZ77 (Lempel-Ziv 77) oraz algorytm Huffmana.
+
+Pierwszym krokiem jest zastosowanie algorytmu LZ77,
+który polega na wyszukiwaniu powtarzających się sekwencji danych w
+strumieniu wejściowym i ich zastępowaniu krótszymi symbolami.
+Dzięki temu możliwe jest skuteczne redukowanie ilości danych w strumieniu obrazu.
+
+Następnie dane poddawane są procesowi kodowania przy użyciu algorytmu Huffmana.
+W tym kroku, często występujące symbole są mapowane na krótsze kody binarne,
+podczas gdy rzadziej występujące symbole są mapowane na dłuższe kody binarne.
+To pozwala na dodatkową redukcję rozmiaru danych poprzez przypisanie krótszych
+kodów binarnych do często występujących symboli.
+
+Dzięki zastosowaniu algorytmu DEFLATE, możliwe jest osiągnięcie wysokiego
+stopnia kompresji danych obrazu bez znacznego pogorszenia jakości obrazu.
+
+% Algorytm JPEG umożliwia osiągnięcie znacznej kompresji obrazu przy zachowaniu akceptowalnej jakości wizualnej.
+% Parametry takie jak czynnik jakości (Quality Factor) pozwalają na regulację kompromisu pomiędzy
+% jakością obrazu a stopniem kompresji.
 
 
 % TODO Więcej źródeł
-Źródła: \cite{Fileformat}
+Źródła: \cite{Fileformat}, \cite{ZbigniewMałach}
 
 \section{Prezentacja wykonanego zadania}
 
