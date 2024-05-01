@@ -4,13 +4,13 @@
 \contentsline {subsection}{\numberline {2.1}Zadanie 4: Implementacja części algorytmu JPEG}{2}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Zadanie 5: Dokończenie implementacji algorytmu JPEG}{2}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Teoria}{2}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Konwersja modelu barw: RGB -> YCbCr}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Przeskalowanie w dół macierzy składowych Cb i Cr}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.1}Konwersja modelu barw RGB do YCbCr}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Przeskalowanie w dół (downsampling) macierzy składowych Cb i Cr}{3}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Podział obrazu na bloki o rozmiarze 8x8}{3}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Wykonanie dyskretnej transformacji cosinusowej (DCT)}{3}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Podzielenie każdego bloku obrazu przez macierz kwantyzacji}{3}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Zaokrąglenie wartości w każdym bloku do liczb całkowitych}{3}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Zwinięcie każdego bloku 8x8 do wiersza 1x64 - algorytm ZigZag}{3}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Zakodowanie danych obrazu – m.in. algorytmem Huffmana}{3}{subsection.3.8}%
-\contentsline {section}{\numberline {4}Prezentacja wykonanego zadania}{4}{section.4}%
-\contentsline {section}{\numberline {5}Wnioski}{4}{section.5}%
+\contentsline {subsection}{\numberline {3.4}Wykonanie dyskretnej transformacji kosinusowej (DCT)}{3}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Podzielenie każdego bloku obrazu przez macierz kwantyzacji}{4}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Zaokrąglenie wartości w każdym bloku do liczb całkowitych}{4}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Zwinięcie każdego bloku 8x8 do wiersza 1x64 - algorytm ZigZag}{4}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Zakodowanie danych obrazu}{4}{subsection.3.8}%
+\contentsline {section}{\numberline {4}Prezentacja wykonanego zadania}{5}{section.4}%
+\contentsline {section}{\numberline {5}Wnioski}{6}{section.5}%

@@ -72,15 +72,30 @@ def worker(sample_rate, size_console_text, qf):
     # 1'. Convert YCbCr to RGB
     image_2 = cv2.cvtColor(np.stack((Y.astype(np.uint8), CR_2.astype(np.uint8), CB_2.astype(np.uint8)), axis=-1),
                            cv2.COLOR_YCrCb2RGB)
+
     return image_2
 
 
+def mse(base_image, mod_image, round_dig=2):
+    return round(np.square(np.subtract(base_image, mod_image)).mean(), 2)
+
+
 def exercise1():
+    print("")
+    print("[ROZMIAR]")
     image_0 = worker(1, "Rozmiar dla: bez próbkowania, QF=85",85)
     image_1 = worker(2, "Rozmiar dla: próbkowanie co 2, QF=85",85)
     image_2 = worker(4, "Rozmiar dla: próbkowanie co 4, QF=85",85)
     image_3 = worker(2, "Rozmiar dla: próbkowanie co 2, QF=5",5)
     image_4 = worker(2, "Rozmiar dla: próbkowanie co 2, QF=40",40)
+
+    print("")
+    print("[MSE]")
+    print(f"MSE pomiędzy oryginałem, a obrazem bez próbkowania i QF=85: {mse(image, image_0)}")
+    print(f"MSE pomiędzy oryginałem, a obrazem z próbkowaniem co 2. element i QF=85: {mse(image, image_1)}")
+    print(f"MSE pomiędzy oryginałem, a obrazem z próbkowaniem co 4. element i QF=85: {mse(image, image_2)}")
+    print(f"MSE pomiędzy oryginałem, a obrazem z próbkowaniem co 2. element i QF=5: {mse(image, image_3)}")
+    print(f"MSE pomiędzy oryginałem, a obrazem z próbkowaniem co 2. element i QF=40: {mse(image, image_4)}")
 
     help.plot(image, "Oryginalny obraz (png)", 2, 3, 1)
     help.plot(image_0, "Bez próbkowania | QF=85, \npo kompresi i dekompresji", 2, 3, 2)
@@ -103,7 +118,7 @@ if __name__ == '__main__':
     user_input = ''
     while True:
         print('[0] - Wyjscie')
-        print('[1] - Zajęcia 2 > Zadanie 4 i 5')
+        print('[1] - Zajęcia 2: zadanie 4 i 5')
         print(f'[2] - Wybierz sciezke do zdjecia (wybrane zdjecie: {path})')
         user_input = input('Wybierz opcje: ')
         user_input = user_input.replace(' ', '').replace('\n', ' ')
