@@ -44,7 +44,11 @@ def zad2():
 def zad3():
     message = input("Podaj wiadomość do zakodowania: ")
     start_pos = input("Podaj pozycję od której ma być kodowana wiadomość (liczba naturalna):")
-    start_pos = int(start_pos)
+    try:
+        start_pos = int(start_pos)
+    except:
+        print("Błędna wartość pozycji startowej!")
+        return
     message = ex.encode_as_binary_array(message)
     coded_img = ex.hide_message(image, message, nbits=1, spos=start_pos)
     if coded_img is not None:
@@ -65,8 +69,30 @@ def zad4():
         to_hide_image_path = input('Podaj sciezkę do pliku, który ma zostać ukryty: ')
     print(f"Znaleziono plik {to_hide_image_path}")
 
-    coded_image, hidden_image_len = ex.hide_image(image, to_hide_image_path, 3)
-    secret_image = ex.reveal_image(coded_image, hidden_image_len, 3)
+    nbits = input("Podaj liczbe najmłodszych bitów do użycia do zakodowania obrazka (liczba naturalna): ")
+    try:
+        nbits = int(nbits)
+    except:
+        print("Błędna wartość nbit!")
+        return
+
+    coded_image, hidden_image_len = ex.hide_image(image, to_hide_image_path, nbits)
+    secret_image = ex.reveal_image(coded_image, hidden_image_len, nbits)
+
+    custom.plot(coded_image, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 2, 1)
+    custom.plot(secret_image, "Ukryty obraz po odkodowaniu", 1, 2, 2)
+    plt.show()
+
+
+def zad5():
+    to_hide_image_path = input("Podaj sciezkę do pliku, który ma zostać ukryty: ")
+    while not os.path.isfile(to_hide_image_path):
+        print(f'Nie znaleziono pliku {to_hide_image_path}!')
+        to_hide_image_path = input('Podaj sciezkę do pliku, który ma zostać ukryty: ')
+    print(f"Znaleziono plik {to_hide_image_path}")
+
+    coded_image, hidden_image_len = ex.hide_image(image, to_hide_image_path, 1)
+    secret_image = ex.reveal_image_eof(coded_image, hidden_image_len)
 
     custom.plot(coded_image, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 2, 1)
     custom.plot(secret_image, "Ukryty obraz po odkodowaniu", 1, 2, 2)
@@ -86,6 +112,7 @@ if __name__ == '__main__':
         print('[2] - Zadanie 2')
         print('[3] - Zadanie 3')
         print('[4] - Zadanie 4')
+        print('[5] - Zadanie 5')
         print(f'[6] - Wybierz sciezke do zdjecia (wybrane zdjecie: {path})')
         user_input = input('Wybierz opcje: ')
         user_input = user_input.replace(' ', '').replace('\n', ' ')
@@ -103,6 +130,9 @@ if __name__ == '__main__':
         elif user_input == '4':
             print('Ładuje zadanie ...')
             zad4()
+        elif user_input == '5':
+            print('Ładuje zadanie ...')
+            zad5()
         elif user_input == '6':
             path = input('Podaj sciezke: ')
             if os.path.isfile(path):

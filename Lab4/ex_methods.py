@@ -132,3 +132,47 @@ def reveal_image(image, lenght, nbits=1):
     # Create an image object from bytes
     img = Image.open(BytesIO(message))
     return img
+
+
+def reveal_message_eoi(image, nbits=1):
+    """Reveal the hidden message.
+
+    nbits: number of least significant bits
+    length: length of the message in bits.
+    """
+
+    nbits = clamp(nbits, 1, 8)
+    image = np.copy(image).flatten()
+
+    # kodowanie eoi
+    jpg_eoi = bin(255)[2:].zfill(8) + bin(217)[2:].zfill(0)
+
+    print(jpg_eoi)
+    message = ""
+    i = 0
+    while True:
+        byte = "{:08b}".format(image[i])
+        message += byte[-nbits:]
+        # rozpatrujemy czy znalezlismy stopke jpg'a jak tak to konczymy
+        if message.endswith(jpg_eoi) or message.endswith(png_eoi):
+            break
+        i += 1
+
+    mod = i % -nbits
+    if mod != 0:
+        message = message[:mod]
+    return message
+
+
+def reveal_image_eof(image, nbits=1):
+    # pobranie obrazu w postaci napizu z obrazu
+    message = reveal_message_eoi(image, nbits=nbits)
+    # przedstawienie danych w postaci tablicy bajtow w postaci bitow
+    message = [message[i:i + 8] for i in range(0, len(message), 8)]
+    # konwersja na liczbe
+    message = [int(element, 2) for element in message]
+    # Stworzenie bajtow z liczb
+    message = bytes(message)
+    # Create an image object from bytes
+    img = Image.open(BytesIO(message))
+    return img
