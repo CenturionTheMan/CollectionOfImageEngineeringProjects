@@ -5,22 +5,25 @@ import binascii
 import cv2 as cv
 import math
 from io import BytesIO
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
+
 
 def encode_as_binary_array(msg):
     """Encode a message as a binary string."""
     msg = msg.encode("utf-8")
     msg = msg.hex()
     msg = [msg[i:i + 2] for i in range(0, len(msg), 2)]
-    msg = [ "{:08b}".format(int(el, base=16)) for el in msg]
+    msg = ["{:08b}".format(int(el, base=16)) for el in msg]
     return "".join(msg)
 
 
 def decode_from_binary_array(array):
     """Decode a binary string to utf8."""
-    array = [array[i: i +8] for i in range(0, len(array), 8)]
+    array = [array[i: i + 8] for i in range(0, len(array), 8)]
     if len(array[-1]) != 8:
         array[-1] = array[-1] + "0" * (8 - len(array[-1]))
-    array = [ "{:02x}".format(int(el, 2)) for el in array]
+    array = ["{:02x}".format(int(el, 2)) for el in array]
     array = "".join(array)
     result = binascii.unhexlify(array)
     return result.decode("utf-8", errors="replace")
@@ -32,7 +35,6 @@ def load_image(path, to_rgb=True, pad=False):
     If pad is set then pad an image to multiple of 8 pixels.
     """
     image = cv.imread(path)
-    print(image is not None)
     if to_rgb:
         image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
     if pad:
@@ -59,7 +61,6 @@ def hide_message(image, message, nbits=1, spos=0):
     nbits: number of least significant bits
     """
 
-
     nbits = clamp(nbits, 1, 8)
     shape = image.shape
     image = np.copy(image).flatten()
@@ -68,16 +69,21 @@ def hide_message(image, message, nbits=1, spos=0):
     # dodajemy napis po pos
     image = image[spos:]
 
-    if len(message) > len(image) * nbits + spos:
-        raise ValueError("Message is to long :(")
+    if len(message) > len(image) * nbits - spos:
+        print(f"Wiadomość jest za długa!\n"
+              f"Długość wiadomości: {len(message)}\n"
+              f"Dostępne miejsce:   {len(image) * nbits - spos}")
+        raise ValueError(f"Wiadomość jest za długa!\n"
+                         f"Długość wiadomości: {len(message)}\n"
+                         f"Dostępne miejsce:   {len(image) * nbits - spos}")
 
     chunks = [message[i:i + nbits] for i in range(0, len(message), nbits)]
     for i, chunk in enumerate(chunks):
         byte = "{:08b}".format(image[i])
         new_byte = byte[:-nbits] + chunk
         image[i] = int(new_byte, 2)
-    #laczenie poczatku z zmienionym fragmentem
-    image = np.concatenate((image_start, image ), axis=None)
+    # laczenie poczatku z zmienionym fragmentem
+    image = np.concatenate((image_start, image), axis=None)
     return image.reshape(shape)
 
 
@@ -154,7 +160,7 @@ def reveal_message_eoi(image, nbits=1):
         byte = "{:08b}".format(image[i])
         message += byte[-nbits:]
         # rozpatrujemy czy znalezlismy stopke jpg'a jak tak to konczymy
-        if message.endswith(jpg_eoi) or message.endswith(png_eoi):
+        if message.endswith(jpg_eoi):
             break
         i += 1
 
