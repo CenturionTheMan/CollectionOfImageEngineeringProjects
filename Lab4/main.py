@@ -62,7 +62,6 @@ def zad1(): # sth do not work
             return
 
         binary = ex.encode_as_binary_array(message)
-        print(binary)
         try:
             new_image = ex.hide_message(image, binary, nbits=nbits)
         except ValueError:
@@ -139,7 +138,8 @@ def zad3():
         if new_image is not None:
             print(f"Wiadomość zakodowana pomyślnie. Długość: {len(binary)}")
             user_save_image(new_image)
-            custom.plot(new_image, "Obraz z zakodowaną wiadomością", 1, 1, 1)
+            custom.plot(image, "Oryginalny obraz", 1, 2, 1)
+            custom.plot(new_image, "Obraz z zakodowaną wiadomością", 1, 2, 2)
             plt.show()
             
         else:

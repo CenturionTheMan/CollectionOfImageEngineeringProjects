@@ -1,0 +1,94 @@
+\documentclass{article}
+\input{TexBase/DocumentBase.tex}
+
+\section{Temat laboratorium}
+Steganografia jest dziedziną nauki zajmującą się ukrywaniem komunikatów w jawnym medium.
+W ramach tego laboratorium, eksplorujemy techniki steganograficzne,
+koncentrując się na metodzie ukrywania informacji w obrazach poprzez modyfikację ich najmniej znaczących bitów (LSB - Least Significant Bit).
+
+W praktyce używamy metody, która zapisuję ukrytą informację w obrazie poprzez modyfikację n-wybranych
+ostatnich bitów pikseli obrazu.
+
+\section{Zadanie 1}
+\subsection{Treść}
+Pierwsze zadanie polegało o użyciu gotowych funkcji \textit{hide\_message} oraz \textit{reveal\_message} w
+celu zakodowania i odkodowania wiadomości w obrazie.
+
+Zadanie zostało rozbudowane o menu, umożliwiające wybór czynności: \textit{zakodowanie wiadomości},
+\textit{odkodowanie wiadomości}.
+Pozwala ono na zapisania obrazu z zakodowaną wiadomością do pliku, oraz odczytanie wiadomości z obrazu z
+pliku, który może pochodzić z innego programu.
+
+\subsection{Prezentacja wykonanego zadania}
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad1_2.png}%
+    }
+    \caption{Logi z konsoli podczas kodowania wiadomości w obrazie}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad1.png}%
+    }
+    \caption{Prezentacja obrazu z zakodowaną wiadomością}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad1_3.png}%
+    }
+    \caption{Logi z konsoli podczas dekodowania wiadomości w obrazie}
+\end{figure}
+
+
+\section{Zadanie 2}
+\subsection{Treść}
+W zadaniu drugim nalezało zakodować w obrazie wiadomość o długości 75\% liczby bajtów w obrazie.
+Następnie należało zmierzyć wartości MSE pomiędzy oryginalnym obrazem o obrazem z zakodowaną wiadomością
+dla wartości \textit{nbits} od 1 do 8.
+
+\subsection{Prezentacja wykonanego zadania}
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad2.png}%
+    }
+    \caption{Obrazy z kolejnymi wartościami nbits}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad2_plot.png}%
+    }
+    \caption{Wykres zależności MSE od wartości nbits}
+\end{figure}
+
+% TODO wnioski?
+
+
+\section{Zadanie 3}
+\subsection{Treść}
+W zadaniu trzecim należało zmodyfikować funkcję \textit{hide\_message} i \textit{reveal\_message} tak,
+aby można było wybrać od którego miejsca ma być zapisywana wiadomość w obrazie.
+
+% TODO jakoś opisać jak to zrobiłem
+
+\subsection{Prezentacja wykonanego zadania}
+
+
+\section{Zadanie 4}
+\subsection{Treść}
+\subsection{Prezentacja wykonanego zadania}
+
+
+\section{Zadanie 5}
+\subsection{Treść}
+\subsection{Prezentacja wykonanego zadania}
+
+
+\end{document}
