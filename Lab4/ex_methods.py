@@ -1,3 +1,4 @@
+import PIL.Image
 from PIL import Image
 from matplotlib import pyplot as plt
 import numpy as np
@@ -29,12 +30,12 @@ def decode_from_binary_array(array):
     return result.decode("utf-8", errors="replace")
 
 
-def load_image(path, to_rgb=True, pad=False):
+def load_image(path, to_rgb=False, pad=False):
     """Load an image.
 
     If pad is set then pad an image to multiple of 8 pixels.
     """
-    image = cv.imread(path)
+    image = cv.imread(path, cv.IMREAD_UNCHANGED)
     if to_rgb:
         image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
     if pad:
@@ -47,7 +48,7 @@ def load_image(path, to_rgb=True, pad=False):
 
 def save_image(path, image):
     """Save an image."""
-    plt.imsave(path, image)
+    cv.imwrite(path, image)
 
 
 def clamp(n, minn, maxn):

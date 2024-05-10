@@ -16,10 +16,11 @@ def user_load_image(text="Podaj ścieżkę do obrazu: "):
         print(f"Obraz o ścieżce: {path} nie istnieje!")
         print(f"[m] - Powrót do menu")
         path = input(text)
+
     return ex.load_image(path)
 
 
-def user_save_image(image, text="Podaj ścieżke do zapisania obrazu (z rozszerzeniem): "):
+def user_save_image(image, text="Podaj ścieżke do zapisania obrazu (jeżeli ma ukryte bity powinien być w formacie png): "):
     image_path = input(text)
     while image_path != 'm':
         try:
@@ -50,6 +51,7 @@ def zad1(): # sth do not work
     print("[0] - Zakoduj wiadomość")
     print("[1] - Odczytaj wiadomość")
     choice = input("Wybierz opcje: ")
+
     if choice == '0':
         image = user_load_image()
         if image is None:
@@ -60,6 +62,7 @@ def zad1(): # sth do not work
             return
 
         binary = ex.encode_as_binary_array(message)
+        print(binary)
         try:
             new_image = ex.hide_message(image, binary, nbits=nbits)
         except ValueError:
@@ -83,6 +86,7 @@ def zad1(): # sth do not work
             return
 
         retrieved_binary = ex.reveal_message(image, nbits, lengh)
+
         decoded_bin = ex.decode_from_binary_array(retrieved_binary)
         print(f"Wiadomość po odkodowaniu z obrazu:\n{decoded_bin}")
     else:
@@ -91,7 +95,7 @@ def zad1(): # sth do not work
 
 def zad2():
     print("Zadanie 2")
-    image = user_load_image()
+    image = user_load_image("Podaj ścieżkę do obrazu: ")
     if image is None:
         return
 
@@ -137,6 +141,7 @@ def zad3():
             user_save_image(new_image)
             custom.plot(new_image, "Obraz z zakodowaną wiadomością", 1, 1, 1)
             plt.show()
+            
         else:
             print("Nie udało się zakodować wiadomości, ponieważ jest za długa")
     elif choice == '1':
@@ -149,7 +154,7 @@ def zad3():
         lengh = user_get_int("Podaj długość wiadomości do odkodowania: ")
         if lengh is None:
             return
-        lengh = len(ex.encode_as_binary_array("X" * lengh))
+
         nbits = user_get_int("Podaj liczbe najmłodszych bitów użytą do zakodowania obrazka (liczba naturalna): ")
         if nbits is None:
             return
@@ -189,23 +194,24 @@ def zad4():
         print(f"Zakodowano obraz. Jego długość to: {hidden_image_len}")
         user_save_image(coded_image)
         custom.plot(coded_image, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 1, 1)
+        plt.show()
 
     elif choice == '1':
-        img = user_load_image("Podaj ścieżkę do obrazu z ukrytym obrazem")
+        img = user_load_image("Podaj ścieżkę do obrazu z ukrytym obrazem: ")
         if img is None:
             return
         nbits = user_get_int("Podaj liczbe najmłodszych bitów użytą do zakodowania obrazka (liczba naturalna): ")
         hidden_image_len = user_get_int("Podaj liczbę bajtów zakodowanego obrazu: ")
 
         secret_image = ex.reveal_image(img, hidden_image_len, nbits)
-        custom.plot(img, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 2, 1)
-        custom.plot(secret_image, "Ukryty obraz po odkodowaniu", 1, 2, 2)
+        custom.plot(img, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 2, 1, to_rgb=True)
+        custom.plot(secret_image, "Ukryty obraz po odkodowaniu", 1, 2, 2, to_rgb=False)
         plt.show()
-
+        
 
 def zad5():
     print("Zadanie 5")
-    image = user_load_image("Podaj scieżkę do obrazu z ukrytym obrazem (jpg): ")
+    image = user_load_image("Podaj scieżkę do obrazu z ukrytym obrazem. Ukryty obraz musi mieć format jpg: ")
     if image is None:
         return
     nbits = user_get_int("Podaj liczbe najmłodszych bitów użytą do zakodowania obrazka (liczba naturalna): ")
@@ -215,9 +221,9 @@ def zad5():
     secret_image = ex.reveal_image_eof(image, nbits)
 
     custom.plot(image, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 2, 1)
-    custom.plot(secret_image, "Ukryty obraz po odkodowaniu", 1, 2, 2)
+    custom.plot(secret_image, "Ukryty obraz po odkodowaniu", 1, 2, 2, to_rgb=False)
     plt.show()
-
+    
 
 if __name__ == '__main__':
     user_input = ''
@@ -251,4 +257,3 @@ if __name__ == '__main__':
             print('Nie rozpoznano opcji')
         print('\n')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/

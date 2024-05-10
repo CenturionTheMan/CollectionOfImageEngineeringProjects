@@ -1,10 +1,15 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import cv2 as cv
 
 
-def plot(data, title, rows, columns, index):
+def plot(data, title, rows, columns, index, to_rgb=True):
     plt.subplot(rows, columns, index)
-    plt.imshow(data)
+    if to_rgb:
+        image = cv.cvtColor(data, cv.COLOR_BGR2RGB)
+    else:
+        image = data
+    plt.imshow(image)
     plt.gray()
     plt.axis('off')
     plt.title(title)
