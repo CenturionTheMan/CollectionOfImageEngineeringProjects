@@ -20,12 +20,14 @@ Pozwala ono na zapisania obrazu z zakodowaną wiadomością do pliku, oraz odczy
 pliku, który może pochodzić z innego programu.
 
 \subsection{Prezentacja wykonanego zadania}
+
+\subsubsection*{Kodowanie wiadomości}
 \begin{figure}[H]
     \centering
     \resizebox{\columnwidth}{!}{%
         \includegraphics{img/zad1_2.png}%
     }
-    \caption{Logi z konsoli podczas kodowania wiadomości w obrazie}
+    \caption{Zdjęcie konsoli podczas kodowania wiadomości}
 \end{figure}
 
 \begin{figure}[H]
@@ -33,16 +35,18 @@ pliku, który może pochodzić z innego programu.
     \resizebox{\columnwidth}{!}{%
         \includegraphics{img/zad1.png}%
     }
-    \caption{Prezentacja obrazu z zakodowaną wiadomością}
+    \caption{Zdjęcie z zakodowaną wiadomością}
 \end{figure}
 
+\subsubsection*{Dekodowanie wiadomości}
 \begin{figure}[H]
     \centering
     \resizebox{\columnwidth}{!}{%
         \includegraphics{img/zad1_3.png}%
     }
-    \caption{Logi z konsoli podczas dekodowania wiadomości w obrazie}
+    \caption{Zdjęcie konsoli podczas dekodowania wiadomości}
 \end{figure}
+
 
 
 \section{Zadanie 2}
@@ -76,19 +80,110 @@ dla wartości \textit{nbits} od 1 do 8.
 W zadaniu trzecim należało zmodyfikować funkcję \textit{hide\_message} i \textit{reveal\_message} tak,
 aby można było wybrać od którego miejsca ma być zapisywana wiadomość w obrazie.
 
-% TODO jakoś opisać jak to zrobiłem
+Zadanie zostało rozbudowane o menu analogiczne do tego z zadania pierwszego.
 
+% TODO jakoś opisać jak to zrobiłem
 \subsection{Prezentacja wykonanego zadania}
+
+\subsubsection*{Kodowanie wiadomości}
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad3_2.png}%
+    }
+    \caption{Zdjęcie logów konsoli podczas procesu kodowania wiadomości}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad3.png}%
+    }
+    \caption{Obraz przed i po zakodowaniu wiadomości od pozycji 50000}
+\end{figure}
+
+
+\subsubsection*{Dekodowanie wiadomości}
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad3_3.png}%
+    }
+    \caption{Zdjęcie logów konsoli podczas procesu dekodowania wiadomości}
+\end{figure}
 
 
 \section{Zadanie 4}
 \subsection{Treść}
+Zadanie czwarte polegało na zaimplementowaniu funkcjonalności ukrywania (i odzyskiwania) obrazu w innym
+obrazie.
+
+W praktyce oznaczało to dodanie kroku, który spłaszczał piksele w obrazie do jednego wymiaru, a następnie
+ukrywał kolejne bity w najmniej znaczących bitach obrazu docelowego.
+
+Analogicznie proces odzyskiwania obrazu polegał na odczytaniu ukrytych bitów i odpowiednią ich transformację
+do kanałów RGB.
+
+Zadanie zostało rozbudowane o menu analogiczne do tego z zadania pierwszego.
+
 \subsection{Prezentacja wykonanego zadania}
 
+\subsubsection*{Kodowanie obrazu}
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad4_2.png}%
+    }
+    \caption{Zdjęcie logów konsoli podczas procesu ukrywania obrazu w innym obrazie}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad4.png}%
+    }
+    \caption{Prezentacja obrazu przed i po zakodowaniu w nim innego obrazu}
+\end{figure}
+
+\subsubsection*{Dekodowanie obrazu}
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad4_4.png}%
+    }
+    \caption{Zdjęcie logów konsoli podczas procesu odzyskiwania obrazu z innego obrazu}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad4_3.png}%
+    }
+    \caption{Prezentacja obrazu z ukrytym obrazem oraz odkodowanego obrazu}
+\end{figure}
 
 \section{Zadanie 5}
 \subsection{Treść}
-\subsection{Prezentacja wykonanego zadania}
+W zadaniu piątym należało rozbudować odczytywanie obrazu z pliku o automatyczne wykrywanie końca wiadomości.
+W ramach zadania zaimplementowałem rozpoznawanie końca wiadomości poprzez sprawdzanie czy aktualnie
+przetwarzane bajty pokrywają się ze stopką konca pliku jpg:
+\[\text{kod stopki} =1111 1111 1101 1001_2 = FFD9_{16}\]
 
+\subsection{Prezentacja wykonanego zadania}
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad5_2.png}%
+    }
+    \caption{Zdjęcie logów konsoli podczas procesu odzyskiwania obrazu z innego obrazu}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \resizebox{\columnwidth}{!}{%
+        \includegraphics{img/zad5.png}%
+    }
+    \caption{Prezentacja obrazu z ukrytym obrazem oraz odkodowanego obrazu}
+\end{figure}
 
 \end{document}

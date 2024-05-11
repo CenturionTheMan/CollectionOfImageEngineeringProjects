@@ -69,7 +69,8 @@ def zad1(): # sth do not work
         if new_image is not None:
             print(f"Wiadomość zakodowana pomyślnie. Długość: {len(binary)}")
             user_save_image(new_image)
-            custom.plot(new_image, "Obraz z zakodowaną wiadomością", 1, 1, 1)
+            custom.plot(image, "Oryginalny obraz", 1, 2, 1)
+            custom.plot(new_image, "Obraz z zakodowaną wiadomością", 1, 2, 2)
             plt.show()
         else:
             print("Nie udało się zakodować wiadomości, ponieważ jest za długa")
@@ -193,7 +194,8 @@ def zad4():
             return
         print(f"Zakodowano obraz. Jego długość to: {hidden_image_len}")
         user_save_image(coded_image)
-        custom.plot(coded_image, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 1, 1)
+        custom.plot(image, "Oryginalny obraz", 1, 2, 1)
+        custom.plot(coded_image, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 2, 2)
         plt.show()
 
     elif choice == '1':
@@ -218,7 +220,11 @@ def zad5():
     if nbits is None:
         return
 
-    secret_image = ex.reveal_image_eof(image, nbits)
+    try:
+        secret_image = ex.reveal_image_eof(image, nbits)
+    except:
+        print("Coś poszło nie tak... Ukryty obraz musi być formatu jpg aby został wykryty.")
+        return
 
     custom.plot(image, "Oryginalny obraz\nz zakodowanym ukrytym obrazem", 1, 2, 1)
     custom.plot(secret_image, "Ukryty obraz po odkodowaniu", 1, 2, 2, to_rgb=False)
