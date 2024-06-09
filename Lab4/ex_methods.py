@@ -154,7 +154,6 @@ def reveal_message_eoi(image, nbits=1):
     # kodowanie eoi
     jpg_eoi = bin(255)[2:].zfill(8) + bin(217)[2:].zfill(0)
 
-    print(jpg_eoi)
     message = ""
     i = 0
     while True:

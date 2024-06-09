@@ -1,0 +1,45 @@
+\begin{thebibliography}{6}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Anonim(2011)]{barycentryczne1}
+Anonim.
+\newblock Współrzędne barycentryczne.
+\newblock
+  \url{https://anutom.blogspot.com/2011/07/wsporzedne-barycentryczne.html},
+  2011.
+
+\bibitem[Komputerowych(nieznany)]{barycentryczne2}
+Polsko-Japońska Akademia~Technik Komputerowych.
+\newblock Algorytmy rasteryzacji.
+\newblock \url{https://gakko.pjwstk.edu.pl/materialy/1927/lec/wyklad-4.html},
+  nieznany.
+
+\bibitem[Kramarczyk(2009)]{DitheringDlaObrazówKolorowych2}
+M.~Kramarczyk.
+\newblock Kwantyzacja obrazu i dithering.
+\newblock \url{http://www.mkramarczyk.zut.edu.pl/?cat=ISM&l=04}, 2009.
+
+\bibitem[Lubiński(2005)]{Dithering}
+Tomasz Lubiński.
+\newblock Algorytm floyda-steinberga.
+\newblock
+  \url{http://www.algorytm.org/przetwarzanie-obrazow/algorytm-floyda-steinberga.html},
+  2005.
+
+\bibitem[Lubiński(2009)]{DitheringDlaObrazówKolorowych1}
+Tomasz Lubiński.
+\newblock Dithering dla obrazów kolorowych.
+\newblock
+  \url{http://www.algorytm.org/przetwarzanie-obrazow/dithering-dla-obrazow-kolorowych.html},
+  2009.
+
+\bibitem[mgr Jerzy~Wałaszek(2022)]{Bresenham}
+mgr Jerzy~Wałaszek.
+\newblock Algorytm bresenhama.
+\newblock \url{https://eduinf.waw.pl/inf/prg/011_sdl2/0009.php}, 2022.
+
+\end{thebibliography}
